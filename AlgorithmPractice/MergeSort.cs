@@ -35,7 +35,7 @@ namespace AlgorithmPractice
                 int k = 0; // Index of arr2
                 int l = 0; // Index of output array
 
-                while (arr1.Length != j && arr2.Length != k)
+                while (j < arr1.Length && k < arr2.Length)
                 {
                     if (arr1[j] < arr2[k])
                     {
@@ -51,14 +51,14 @@ namespace AlgorithmPractice
                     }
                 }
 
-                while (j != arr1.Length)
+                while (j < arr1.Length)
                 {
                     numbers[l] = arr1[j];
                     l++;
                     j++;
                 }
 
-                while (k != arr2.Length)
+                while (k < arr2.Length)
                 {
                     numbers[l] = arr2[k];
                     l++;

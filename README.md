@@ -7,3 +7,5 @@ Currently contains:
 
 - Mergesort
 - Bubblesort
+- Quicksort
+- Selectionsort
