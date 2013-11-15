@@ -55,6 +55,34 @@ namespace AlgorithmPractice
 
             #endregion
 
+            Console.WriteLine();
+            Console.WriteLine();
+
+            #region QuickSort Test
+
+            Console.WriteLine("Before QuickSort:");
+            shuffledArray = Utils.FisherYatesShuffle(sortedArray);
+            Utils.PrintArray(shuffledArray);
+            outputArray = QuickSort.Sort(shuffledArray);
+            Console.WriteLine("After QuickSort:");
+            Utils.PrintArray(outputArray);
+
+            #endregion
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            #region SelectionSort Test
+
+            Console.WriteLine("Before SelectionSort:");
+            shuffledArray = Utils.FisherYatesShuffle(sortedArray);
+            Utils.PrintArray(shuffledArray);
+            outputArray = SelectionSort.Sort(shuffledArray);
+            Console.WriteLine("After SelectionSort:");
+            Utils.PrintArray(outputArray);
+
+            #endregion
+
             Console.ReadLine();
         }
     }

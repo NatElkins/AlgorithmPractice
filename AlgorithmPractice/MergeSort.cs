@@ -31,9 +31,9 @@ namespace AlgorithmPractice
                 arr1 = MergeSort.Sort(arr1);
                 arr2 = MergeSort.Sort(arr2);
 
-                int j = 0;
-                int k = 0;
-                int l = 0;
+                int j = 0; // Index of arr1
+                int k = 0; // Index of arr2
+                int l = 0; // Index of output array
 
                 while (arr1.Length != j && arr2.Length != k)
                 {
