@@ -10,21 +10,34 @@ namespace AlgorithmPractice
     {
         static void Main(string[] args)
         {
+            bool enteredInt = false;
+            int intsToSort = 0; // Default value
+
+            while (!enteredInt)
+            {
+                Console.WriteLine("Please enter the number of integers you want the algorithms to sort:");
+                string input = Console.ReadLine();
+
+                if (Int32.TryParse(input, out intsToSort))
+                    enteredInt = true;
+                else
+                    Console.WriteLine("You did not enter an acceptable integer value.");
+
+                Console.WriteLine();
+            }
+
+            int[] sortedArray = Utils.GenerateIntegerArray(intsToSort);
+            int[] shuffledArray;
+            int[] outputArray;
+
             #region BubbleSort Test
 
-            int[] testNumbers = AlgorithmImplementations.NewTestSet();
-
             Console.WriteLine("Before BubbleSort:");
-            for (int i = 0; i < testNumbers.Length; i++)
-                Console.Write(testNumbers[i] + ",");
-
-            Console.WriteLine();
-
-            testNumbers = AlgorithmImplementations.BubbleSort(testNumbers);
-
+            shuffledArray = Utils.FisherYatesShuffle(sortedArray);
+            Utils.PrintArray(shuffledArray);
+            outputArray = BubbleSort.Sort(shuffledArray);
             Console.WriteLine("After BubbleSort:");
-            for (int i = 0; i < testNumbers.Length; i++)
-                Console.Write(testNumbers[i] + ",");
+            Utils.PrintArray(outputArray);
 
             #endregion
 
@@ -33,19 +46,12 @@ namespace AlgorithmPractice
 
             #region MergeSort Test
 
-            testNumbers = AlgorithmImplementations.NewTestSet();
-
             Console.WriteLine("Before MergeSort:");
-            for (int i = 0; i < testNumbers.Length; i++)
-                Console.Write(testNumbers[i] + ",");
-
-            Console.WriteLine();
-
-            testNumbers = AlgorithmImplementations.MergeSort(testNumbers);
-
+            shuffledArray = Utils.FisherYatesShuffle(sortedArray);
+            Utils.PrintArray(shuffledArray);
+            outputArray = MergeSort.Sort(shuffledArray);
             Console.WriteLine("After MergeSort:");
-            for (int i = 0; i < testNumbers.Length; i++)
-                Console.Write(testNumbers[i] + ",");
+            Utils.PrintArray(outputArray);
 
             #endregion
 
